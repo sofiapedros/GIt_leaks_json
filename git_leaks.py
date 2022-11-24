@@ -37,7 +37,7 @@ def transform(commits):
             # Si encuentra esa palabra, añade al diccionario el id del commit con
             # su mensaje, dentro de commits
             if re.search(word, commit.message, re.IGNORECASE):
-                #print('Commit: {} - {}'.format(commit.hexsha, commit.message))
+
                 diccionario['commits'].append({
                 'id': commit.hexsha,
                 'message': commit.message,})
@@ -47,7 +47,6 @@ def load(diccionario):
     ''' 
     Función que carga los datos en un json
     '''
-    #print(diccionario)
     with open('git_leaks.json', 'w') as file:
         json.dump(diccionario, file, indent=4)
 
