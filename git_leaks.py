@@ -41,6 +41,7 @@ def transform(commits):
                 diccionario['commits'].append({
                 'id': commit.hexsha,
                 'message': commit.message,})
+
     return diccionario
 
 def load(diccionario):
